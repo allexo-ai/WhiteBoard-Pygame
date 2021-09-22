@@ -1,18 +1,18 @@
 import pygame
 from pygame.constants import MOUSEBUTTONDOWN
 
-# Porneste programul
+# Starts the program
 pygame.init()
 
-# Creeaza fereastra programului
+# Creates program window
 screen = pygame.display.set_mode((1920, 1017))
 
-# Nume si iconita
+# Name and Icon
 pygame.display.set_caption("Tabla Alba")
 icon = pygame.image.load("whiteboard.png")
 pygame.display.set_icon(icon)
 
-# Creeaza creionul, radiera si X-ul
+# Creates the pencil, eraser and X icons
 pencilImg = pygame.image.load('pencil.png')
 pencilX = 800
 pencilY = 910
@@ -34,23 +34,21 @@ def eraser():
 def cross():
     screen.blit(crossImg, (crossX, crossY))
 
-z = 0
-
-# Verifica daca programul este oprit de utilizator
+# Program Loop
 running = True
 while running:
-    # Seteaza culoarea de fundal (alb)
+    # Sets the background color (white)
     screen.fill((255, 255, 255))
 
+    # Checks if the program is closed
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-
-# Afiseaza creionul, radiera si X-ul
+    # Shows the pencil, eraser and X icons
     pencil()
     eraser()
     cross()
 
-# Afiseaza ecranul
+    # Updates the screen
     pygame.display.update()
