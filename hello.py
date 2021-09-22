@@ -8,7 +8,7 @@ pygame.init()
 screen = pygame.display.set_mode((1920, 1017))
 
 # Name and Icon
-pygame.display.set_caption("Tabla Alba")
+pygame.display.set_caption("Whiteboard")
 icon = pygame.image.load("whiteboard.png")
 pygame.display.set_icon(icon)
 
