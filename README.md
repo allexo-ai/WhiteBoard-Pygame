@@ -5,12 +5,12 @@ Made for a school project.
 
 All icons taken from Flaticon:
 
-Pencil Icon: Freepik; 
+Pencil Icon: Freepik
 
-Eraser Icon: Flat Icons; 
+Eraser Icon: Flat Icons
 
-Cross Icon: Freepik; 
+Cross Icon: Freepik
 
-Whiteboard Icon: Vectors Market; 
+Whiteboard Icon: Vectors Market
 
 Converted to exe using cx_freeze
