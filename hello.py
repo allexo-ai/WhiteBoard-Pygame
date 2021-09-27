@@ -1,4 +1,5 @@
 import pygame
+from pygame.constants import MOUSEBUTTONDOWN, MOUSEBUTTONUP
 
 # Starts the program
 pygame.init()
@@ -11,43 +12,92 @@ pygame.display.set_caption("Whiteboard")
 icon = pygame.image.load("whiteboard.png")
 pygame.display.set_icon(icon)
 
-# Creates the pencil, eraser and X icons
+# Sets the background color (white)
+screen.fill((255, 255, 255))
+
+brush1 = pygame.image.load('brush1.png')
+brush1 = pygame.transform.scale(brush1,(4,4))
+
+brush2 = pygame.image.load('brush2.png')
+brush2 = pygame.transform.scale(brush2,(16,16))
+
+# Updates the screen
+pygame.display.update()
+
+# Creates images for the pencil, eraser and cross buttons 
 pencilImg = pygame.image.load('pencil.png')
-pencilX = 800
-pencilY = 910
-
 eraserImg = pygame.image.load('eraser.png')
-eraserX = 900
-eraserY = 910
-
 crossImg = pygame.image.load('cross.png')
-crossX = 1000
-crossY = 910
 
-def pencil():
-    screen.blit(pencilImg, (pencilX, pencilY))
+# Defines buttons
+class Button():
+    def __init__(self, x, y, image):
+        self.image = image
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (x,y)
+        self.clicked = False
+    
+    def draw(self):
+        action = False
+        # Gets the mouse position
+        pos = pygame.mouse.get_pos()
 
-def eraser():
-    screen.blit(eraserImg, (eraserX, eraserY))
+        if self.rect.collidepoint(pos):
+            if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
+                self.clicked = True
+                action = True
+            if pygame.mouse.get_pressed()[0] == 0:
+                self.clicked = False
 
-def cross():
-    screen.blit(crossImg, (crossX, crossY))
+        screen.blit(self.image, (self.rect.x, self.rect.y))
+
+        return action
+        
+# Creates buttons
+pencil = Button(800, 910, pencilImg)
+eraser = Button(900, 910, eraserImg)
+cross = Button(1000, 910, crossImg)
+
+penclick = 0
+pendraw = 0
+
+eraseclick = 0
+erasedraw = 0
 
 # Program Loop
 running = True
 while running:
-    # Sets the background color (white)
-    screen.fill((255, 255, 255))
+
+    # Shows the pencil, eraser and X icons
+    if pencil.draw():
+        penclick = 1
+    if eraser.draw():
+        penclick = 0
+        eraseclick = 1
+    if cross.draw():
+        screen.fill((255, 255, 255))
+
+    # Gets the mouse position
+    x,y = pygame.mouse.get_pos()
 
     # Checks if the program is closed
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
-    # Shows the pencil, eraser and X icons
-    pencil()
-    eraser()
-    cross()
+        if penclick == 1:
+            if event.type == MOUSEBUTTONDOWN:
+                pendraw = 1
+            elif event.type == MOUSEBUTTONUP:
+                pendraw = 0
+            if pendraw == 1:
+                screen.blit(brush1,(x-2,y-2))
+        if eraseclick == 1:
+            if event.type == MOUSEBUTTONDOWN:
+                erasedraw = 1
+            elif event.type == MOUSEBUTTONUP:
+                erasedraw = 0
+            if erasedraw == 1:
+                screen.blit(brush2,(x-8,y-8))
 
     # Updates the screen
     pygame.display.update()
