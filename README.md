@@ -17,6 +17,5 @@ Whiteboard Icon: https://www.flaticon.com/free-icon/whiteboard_234633
 
 Converted to exe using cx_freeze
 
-![image](https://user-images.githubusercontent.com/63292465/134870010-b8a69b2d-9b30-4aad-8990-4fe79677baec.png)
-
-![image](https://user-images.githubusercontent.com/63292465/134870197-798e0c05-5568-401c-9ea3-0b5b01eab726.png)
+![image](https://user-images.githubusercontent.com/63292465/134870406-f09bfa6e-569a-4852-87e2-03bc48d1c3b4.png)
+![image](https://user-images.githubusercontent.com/63292465/134870511-88cc42fa-ae33-44f7-b103-263a1f5ae87a.png)
