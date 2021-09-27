@@ -19,7 +19,7 @@ brush1 = pygame.image.load('brush1.png')
 brush1 = pygame.transform.scale(brush1,(4,4))
 
 brush2 = pygame.image.load('brush2.png')
-brush2 = pygame.transform.scale(brush2,(16,16))
+brush2 = pygame.transform.scale(brush2,(64,64))
 
 # Updates the screen
 pygame.display.update()
@@ -100,7 +100,7 @@ while running:
             elif event.type == MOUSEBUTTONUP:
                 erasedraw = 0
             if erasedraw == 1:
-                screen.blit(brush2,(x-8,y-8))
+                screen.blit(brush2,(x-32,y-32))
 
     # Updates the screen
     pygame.display.update()
