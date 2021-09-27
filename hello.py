@@ -70,11 +70,14 @@ while running:
 
     # Shows the pencil, eraser and X icons
     if pencil.draw():
+        eraseclick = 0
         penclick = 1
     if eraser.draw():
         penclick = 0
         eraseclick = 1
     if cross.draw():
+        penclick = 0
+        eraseclick = 0
         screen.fill((255, 255, 255))
 
     # Gets the mouse position
