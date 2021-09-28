@@ -58,7 +58,7 @@ pencil = Button(800, 910, pencilImg)
 eraser = Button(900, 910, eraserImg)
 cross = Button(1000, 910, crossImg)
 
-penclick = 0
+penclick = 1
 pendraw = 0
 
 eraseclick = 0
