@@ -68,7 +68,7 @@ erasedraw = 0
 running = True
 while running:
 
-    # Shows the pencil, eraser and X icons
+    # Shows the buttons and checks if they're pressed
     if pencil.draw():
         eraseclick = 0
         penclick = 1
@@ -87,6 +87,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        # Makes the pencil write and the eraser erase
         if penclick == 1:
             if event.type == MOUSEBUTTONDOWN:
                 pendraw = 1
