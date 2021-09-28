@@ -79,6 +79,7 @@ while running:
         penclick = 0
         eraseclick = 0
         screen.fill((255, 255, 255))
+        penclick = 1
 
     # Gets the mouse position
     x,y = pygame.mouse.get_pos()
