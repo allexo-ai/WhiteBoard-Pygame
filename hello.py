@@ -16,10 +16,8 @@ pygame.display.set_icon(icon)
 screen.fill((255, 255, 255))
 
 brush1 = pygame.image.load('brush1.png')
-brush1 = pygame.transform.scale(brush1,(4,4))
 
 brush2 = pygame.image.load('brush2.png')
-brush2 = pygame.transform.scale(brush2,(64,64))
 
 # Updates the screen
 pygame.display.update()
@@ -95,14 +93,14 @@ while running:
             elif event.type == MOUSEBUTTONUP:
                 pendraw = 0
             if pendraw == 1:
-                screen.blit(brush1,(x-2,y-2))
+                screen.blit(brush1,(x-1.5,y-1.5))
         if eraseclick == 1:
             if event.type == MOUSEBUTTONDOWN:
                 erasedraw = 1
             elif event.type == MOUSEBUTTONUP:
                 erasedraw = 0
             if erasedraw == 1:
-                screen.blit(brush2,(x-32,y-32))
+                screen.blit(brush2,(x-16,y-16))
 
     # Updates the screen
     pygame.display.update()
