@@ -15,14 +15,8 @@ pygame.display.set_icon(icon)
 # Sets the background color (white)
 screen.fill((255, 255, 255))
 
-<<<<<<< HEAD
 brush1 = pygame.image.load('brush1.jpg')
 brush2 = pygame.image.load('brush2.jpg')
-=======
-brush1 = pygame.image.load('brush1.png')
-
-brush2 = pygame.image.load('brush2.png')
->>>>>>> 6a156f3c18e3f277df6e45f5d129ba6e5d7a0e0b
 
 # Updates the screen
 pygame.display.update()
